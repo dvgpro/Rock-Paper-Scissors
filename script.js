@@ -1,3 +1,40 @@
+function playGame()
+{    
+    var user = 0
+    var comp = 0
+
+    for (let i=0; i<5; i++)
+    {
+
+        var userSelection = getUserSelection()
+        var computerSelection = getComputerSelection()
+
+        var point = singleRound(userSelection, computerSelection)
+        
+
+        switch (point)
+        {
+            case "userWins":
+                user += 1
+                break
+            case "computerWins":
+                comp += 1
+                break
+            case "draw":
+                break
+                
+        }
+    }
+
+    if (user > comp)
+    {
+        return "You win the game!  " + user + "/5"
+    }
+    else if (user < comp)
+    {
+        return "You win the game!  " + comp + "/5"
+    }
+}
 
 function getUserSelection()
 {
@@ -32,13 +69,13 @@ function getComputerSelection()
     {
         case 1:
             return "rock"
-        break
+            break
         case 2:
             return "paper"
-        break
+            break
         case 3:
             return "scissors"
-        break
+            break
     }
 }
 
@@ -47,26 +84,22 @@ function singleRound(userSelection, computerSelection)
     //Checks if the user wins, if they do, shows victory message and give user a point
     if ((userSelection === "rock" && computerSelection === "scissors") || (userSelection === "scissors" && computerSelection === "paper") || (userSelection === "paper" && computerSelection === "rock"))
     {
-        alert(userSelection + " beats " + computerSelection + "! You win!");
+        alert(userSelection.charAt(0).toUpperCase() + userSelection.slice(1) + " beats " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)  + "! You win!");
         return "userWins"
     }
     //Checks if the computer wins, if they do, shows defeat message and give the computer a point
     else if ((computerSelection === "rock" && userSelection === "scissors") || (computerSelection === "scissors" && userSelection === "paper") || (computerSelection === "paper" && userSelection === "rock"))
     {
-        alert(computerSelection + " beats " + userSelection + "! You lose!");
-        return "computerWins"
+        alert(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)  + " beats " + userSelection.charAt(0).toUpperCase() + userSelection.slice(1)  + "! You lose!");
+        return 'computerWins'
     }
     //Checks if the users and computer selections are the same, returns a draw message
     else if (userSelection === computerSelection)
     {
-        alert(computerSelection + " equals " + userSelection + "! It's a draw!");
+        alert(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)  + " equals " + userSelection.charAt(0).toUpperCase() + userSelection.slice(1)  + "! It's a draw!");
         return "draw"
     }
 }
 
-var userSelection = getUserSelection()
-var computerSelection = getComputerSelection()
-
-var point = singleRound(userSelection, computerSelection)
-
 var winner = playGame()
+alert(winner)
