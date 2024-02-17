@@ -9,6 +9,20 @@
     <body>
         <script>
 
+            function getUserSelection()
+            {
+                var userAns = prompt("Rock, Paper, Scissors, Shoot: ").toLowerCase()
+                if (userAns === "rock" || userAns === 'paper' || userAns === "scissors")
+                {
+                    return userAns
+                }
+                else
+                {
+                    alert("Selection doesn't equal Rock, Paper, or Scissors! Try Again!");
+                    getUserSelection();
+                }
+            }
+
             var userSelection = getUserSelection()
             var computerSelection = getComputerSelection()
 
