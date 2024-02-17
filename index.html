@@ -30,16 +30,28 @@
 
             function getComputerSelection()
             {
-                var computerAns = ""
                 let min = 1
                 let max = 3
                 var randomNum = generateRandomNum(min, max)
                 
-                switch
+                switch(randomNum)
+                {
+                    case 1:
+                        return "rock"
+                    break
+                    case 2:
+                        return "paper"
+                    break
+                    case 3:
+                        return "scissors"
+                    break
+                }
             }
 
             var userSelection = getUserSelection()
+            console.log(userSelection)
             var computerSelection = getComputerSelection()
+            console.log(computerSelection)
             
             var point = singleRound(userSelection, computerSelection)
             var play = playGame(point)
