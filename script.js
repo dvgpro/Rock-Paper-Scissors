@@ -1,8 +1,10 @@
 function playGame()
 {    
+    //Declares the variables to count how many rounds the user and computer wins
     var user = 0
     var comp = 0
 
+    //Loops 5 times
     for (let i=0; i<5; i++)
     {
 
@@ -11,7 +13,7 @@ function playGame()
 
         var point = singleRound(userSelection, computerSelection)
         
-
+        //Count the rounds the user and computer wins each round
         switch (point)
         {
             case "userWins":
@@ -26,6 +28,7 @@ function playGame()
         }
     }
 
+    //Determines the winner by comparing how many rounds the computer and user wins
     if (user > comp)
     {
         return "You win the game!  " + user + "/5"
@@ -81,19 +84,19 @@ function getComputerSelection()
 
 function singleRound(userSelection, computerSelection)
 {
-    //Checks if the user wins, if they do, shows victory message and give user a point
+    //Checks if the user wins, if they do, shows victory message and tells the play game function to give the user a point
     if ((userSelection === "rock" && computerSelection === "scissors") || (userSelection === "scissors" && computerSelection === "paper") || (userSelection === "paper" && computerSelection === "rock"))
     {
         alert(userSelection.charAt(0).toUpperCase() + userSelection.slice(1) + " beats " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)  + "! You win!");
         return "userWins"
     }
-    //Checks if the computer wins, if they do, shows defeat message and give the computer a point
+    //Checks if the computer wins, if they do, shows defeat message and tells the play game function to give the computer a point
     else if ((computerSelection === "rock" && userSelection === "scissors") || (computerSelection === "scissors" && userSelection === "paper") || (computerSelection === "paper" && userSelection === "rock"))
     {
         alert(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)  + " beats " + userSelection.charAt(0).toUpperCase() + userSelection.slice(1)  + "! You lose!");
         return 'computerWins'
     }
-    //Checks if the users and computer selections are the same, returns a draw message
+    //Checks if the users and computer selections are the same, and tll the play game function to give no points
     else if (userSelection === computerSelection)
     {
         alert(computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)  + " equals " + userSelection.charAt(0).toUpperCase() + userSelection.slice(1)  + "! It's a draw!");
