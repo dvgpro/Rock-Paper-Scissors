@@ -52,6 +52,28 @@
                 }
             }
 
+            function singleRound(userSelection, computerSelection)
+            {
+                //Checks if the user wins, if they do, shows victory message and give user a point
+                if ((userSelection === "rock" && computerSelection === "scissors") || (userSelection === "scissors" && computerSelection === "paper") || (userSelection === "paper" && computerSelection === "rock"))
+                {
+                    alert(userSelection + " beats " + computerSelection + "! You win!");
+                    return "userWins"
+                }
+                //Checks if the computer wins, if they do, shows defeat message and give the computer a point
+                else if ((computerSelection === "rock" && userSelection === "scissors") || (computerSelection === "scissors" && userSelection === "paper") || (computerSelection === "paper" && userSelection === "rock"))
+                {
+                    alert(computerSelection + " beats " + userSelection + "! You lose!");
+                    return "computerWins"
+                }
+                //Checks if the users and computer selections are the same, returns a draw message
+                else if (userSelection === computerSelection)
+                {
+                    alert(computerSelection + " equals " + userSelection + "! It's a draw!");
+                    return "draw"
+                }
+            }
+
             var userSelection = getUserSelection()
             var computerSelection = getComputerSelection()
             
