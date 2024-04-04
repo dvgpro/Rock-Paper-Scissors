@@ -6,6 +6,8 @@ var buttons = document.getElementsByClassName('.image-btn');
 const outputContainer = document.querySelector('.output-message');
 const winnerContainer = document.querySelector('.winner-message');
 
+const refreshPage = document.querySelector('.btn-reset');
+
 let userPoints = 0;
 let computerPoints = 0;
 let roundCounter = 0;
@@ -52,7 +54,6 @@ function playRound(userSelection)
 
     updateRound(roundCounter);
 
-    
 
 };
 
@@ -90,3 +91,8 @@ function updateRound(roundCounter)
 
     roundDisplay.textContent = "Round: " + roundCounter;
 };
+
+refreshPage.addEventListener('click', () =>
+{
+    location.reload();
+});
