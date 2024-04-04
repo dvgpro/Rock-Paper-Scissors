@@ -3,8 +3,8 @@ const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
 const counter = document.querySelectorAll('.image-btn');
 
-const outputContainer = document.querySelector('.output-message')
-const winnerContainer = document.querySelector('.winner-message')
+const outputContainer = document.querySelector('.output-message');
+const winnerContainer = document.querySelector('.winner-message');
 
 btnRock.addEventListener('click', () =>
 {
@@ -19,12 +19,6 @@ btnPaper.addEventListener('click', () =>
 btnScissors.addEventListener('click', () =>
 {
     playRound('Scissors');
-});
-
-//Will count the rounds whenever any of the three buttons are clicked
-counter.addEventListener('click', () =>
-{
-    roundCounter(1);
 });
 
 function playRound(userSelection)
@@ -99,28 +93,21 @@ function getWinner(userSelection, computerSelection)
 
 function displayWinner(winner, userSelection, computerSelection)
 {
-    const outputContent = document.createElement('div');
-    const winnerContent = document.createElement('div');
-
-    outputContent.classList.add("outputContent");
-    winnerContent.classList.add('winnerContent');
 
     switch(winner)
     {
         case 'Draw':
-            outputContent.textContent = userSelection + " equals " + computerSelection + "!";
-            winnerContent.textContent = "It's a draw!";
+            outputContainer.textContent = userSelection + " equals " + computerSelection + "!";
+            winnerContainer.textContent = "It's a draw!";
             break;
         case 'Computer':
             outputContainer.textContent = computerSelection + " beats " + userSelection + "!";
-            winnerContent.textContent = "Computer wins!";
+            winnerContainer.textContent = "Computer wins!";
             break;
         case 'User':
             outputContainer.textContent = userSelection + " beats " + computerSelection + "!";
-            winnerContent.textContent = "User wins!";
+            winnerContainer.textContent = "User wins!";
             break;
-    }
+    };
 
-    outputContainer.appendChild(outputContent);
-    winnerContainer.appendChild(winnerContent);
 };
