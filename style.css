@@ -7,3 +7,9 @@ body
     background-color: #121212;
     color: #FFFFFF;
 }
+
+.title
+{
+    font-size: 52px;
+    font-weight: bold;
+}
