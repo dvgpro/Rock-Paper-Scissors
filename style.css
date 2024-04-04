@@ -13,3 +13,12 @@ body
     font-size: 52px;
     font-weight: bold;
 }
+
+.game-container
+{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 400px;
+    background-color: #383838;
+}
