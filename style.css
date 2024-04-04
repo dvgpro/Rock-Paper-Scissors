@@ -22,3 +22,10 @@ body
     width: 400px;
     background-color: #383838;
 }
+
+.main
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
