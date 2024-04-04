@@ -67,3 +67,13 @@ body
     padding: 5px;
     margin: 10px;
 }
+
+.image-btn
+{
+    border-style: solid;
+    border-color: #121212;
+    border-radius: 100%;
+    border-width: 5px;
+    padding: 10px;
+    margin: 10px;
+}
