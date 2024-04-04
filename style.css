@@ -44,8 +44,9 @@ body
     font-size: 16px;
 }
 
-.output-message
+.output-message, .winner-message
 {
+    display: flex;
     height: 28px;
     width: 240px;
     background-color: #8f8d8d;
@@ -54,18 +55,16 @@ body
     border-color: #121212;
     padding: 5px;
     margin: 10px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .winner-message
 {
     height: 28px;
     width: 200px;
-    background-color: #8f8d8d;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #121212;
-    padding: 5px;
-    margin: 10px;
 }
 
 .image-btn
