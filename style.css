@@ -107,5 +107,13 @@ body
 
 .btn-reset
 {
-    font: 16px;
+    font: 40px;
+    border-style: solid;
+    border-color: #121212;
+    background-color: #b9b9b9;
+    border-width: 3px;
+    border-radius: 10px;
+    height: 50px;
+    width: 110px;
+    font-weight: bold;
 }
