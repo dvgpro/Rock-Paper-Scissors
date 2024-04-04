@@ -1,10 +1,14 @@
 const btnRock = document.querySelector('.btn-rock');
 const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
-const counter = document.querySelectorAll('.image-btn');
+var btnCounter = document.querySelectorAll('.image-btn');
 
 const outputContainer = document.querySelector('.output-message');
 const winnerContainer = document.querySelector('.winner-message');
+
+let userPoints = 0;
+let computerPoints = 0;
+let roundCounter = 0;
 
 btnRock.addEventListener('click', () =>
 {
@@ -21,12 +25,34 @@ btnScissors.addEventListener('click', () =>
     playRound('Scissors');
 });
 
-function playRound(userSelection)
-{
-    let computerSelection = getComputerSelection();
-    let winner = getWinner(userSelection, computerSelection);
 
-    displayWinner(winner, userSelection, computerSelection);
+function playRound(userSelection)
+{ 
+    let computerSelection = getComputerSelection();
+    
+    if(computerSelection === userSelection)
+    {
+        outputContainer.textContent = userSelection + " equals " + computerSelection + "!";
+        winnerContainer.textContent = "It's a draw!";
+    }
+    else if((computerSelection==='Paper' && userSelection==='Rock') || (computerSelection==='Scissors' && userSelection==='Paper') || (computerSelection==='Rock' && userSelection==='Scissors'))
+    {
+        computerPointsPoints += 1;
+        outputContainer.textContent = computerSelection + " beats " + userSelection + "!";
+        winnerContainer.textContent = "Computer wins!";
+    } 
+    else if((computerSelection==='Rock' && userSelection==='Paper') || (computerSelection==='Paper' && userSelection==='Scissors') || (computerSelection==='Scissors' && userSelection==='Rock'))
+    {
+        userPoints += 1;
+        outputContainer.textContent = userSelection + " beats " + computerSelectionSelection + "!";
+        winnerContainer.textContent = "User wins!";
+    };
+            
+       
+
+    console.log(userPoints);
+    console.log(computerPoints);
+
 };
 
 function generateRandomNum(min, max)
@@ -55,59 +81,4 @@ function getComputerSelection()
             return "Scissors";
             break;
     };
-};
-
-function getWinner(userSelection, computerSelection)
-{
-    switch(userSelection)
-    {
-        case 'Rock':
-            if(computerSelection==="Rock"){
-                return 'Draw';
-            }else if(computerSelection==='Paper'){
-                return 'Computer';
-            } else if(computerSelection==='Scissors'){
-                return 'User';
-            };
-            break;
-        case 'Paper':
-            if(computerSelection==="Paper"){
-                return 'Draw';
-            }else if(computerSelection==='Scissors'){
-                return 'Computer';
-            } else if(computerSelection==='Rock'){
-                return 'User';
-            };
-            break;
-        case 'Scissors':
-            if(computerSelection==="Scissors"){
-                return 'Draw';
-            }else if(computerSelection==='Rock'){
-                return 'Computer';
-            } else if(computerSelection==='Paper'){
-                return 'User';
-            };
-            break;
-    };
-};
-
-function displayWinner(winner, userSelection, computerSelection)
-{
-
-    switch(winner)
-    {
-        case 'Draw':
-            outputContainer.textContent = userSelection + " equals " + computerSelection + "!";
-            winnerContainer.textContent = "It's a draw!";
-            break;
-        case 'Computer':
-            outputContainer.textContent = computerSelection + " beats " + userSelection + "!";
-            winnerContainer.textContent = "Computer wins!";
-            break;
-        case 'User':
-            outputContainer.textContent = userSelection + " beats " + computerSelection + "!";
-            winnerContainer.textContent = "User wins!";
-            break;
-    };
-
 };
