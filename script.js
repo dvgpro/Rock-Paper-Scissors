@@ -18,14 +18,21 @@ btnScissors.addEventListener('click', () =>
     playRound('Scissors');
 });
 
+//Will count the rounds whenever any of the three buttons are clicked
 counter.addEventListener('click', () =>
 {
     roundCounter(1);
 });
 
+function playRound(userSelection)
+{
+    let computerSelection = getComputerSelection();
+    displayWinner(userSelection, computerSelection);
+};
+
 function generateRandomNum(min, max)
 {
-    //Generates a random number between 1 and 3
+    //Generates a random number based on the min and max numbers given elsewhere
     return Math.floor(Math.random() * (max - min +1) + min);
 };
 
@@ -33,10 +40,10 @@ function getComputerSelection()
 {
     let min = 1;
     let max = 3;
-    //Calls the random number function to get a number between 1 and 3
+    
     var randomNum = generateRandomNum(min, max);
     
-    //Returns rock, paper, or scissors based on the random number generated
+    
     switch(randomNum)
     {
         case 1:
@@ -48,5 +55,6 @@ function getComputerSelection()
         case 3:
             return "Scissors";
             break;
-    }
+    };
 };
+
