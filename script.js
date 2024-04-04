@@ -37,14 +37,14 @@ function playRound(userSelection)
     }
     else if((computerSelection==='Paper' && userSelection==='Rock') || (computerSelection==='Scissors' && userSelection==='Paper') || (computerSelection==='Rock' && userSelection==='Scissors'))
     {
-        computerPointsPoints += 1;
+        computerPoints += 1;
         outputContainer.textContent = computerSelection + " beats " + userSelection + "!";
         winnerContainer.textContent = "Computer wins!";
     } 
     else if((computerSelection==='Rock' && userSelection==='Paper') || (computerSelection==='Paper' && userSelection==='Scissors') || (computerSelection==='Scissors' && userSelection==='Rock'))
     {
         userPoints += 1;
-        outputContainer.textContent = userSelection + " beats " + computerSelectionSelection + "!";
+        outputContainer.textContent = userSelection + " beats " + computerSelection + "!";
         winnerContainer.textContent = "User wins!";
     };
             
