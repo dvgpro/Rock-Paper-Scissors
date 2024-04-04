@@ -21,6 +21,8 @@ body
     height: 600px;
     width: 400px;
     background-color: #383838;
+    margin: 20px;
+    padding: 10px;
 }
 
 .main
