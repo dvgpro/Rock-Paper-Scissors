@@ -3,6 +3,9 @@ const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
 const counter = document.querySelectorAll('.image-btn');
 
+const outputContainer = document.querySelector('.output-message')
+const winnerContainer = document.querySelector('.winner-message')
+
 btnRock.addEventListener('click', () =>
 {
     playRound('Rock');
@@ -27,7 +30,7 @@ counter.addEventListener('click', () =>
 function playRound(userSelection)
 {
     let computerSelection = getComputerSelection();
-    displayWinner(userSelection, computerSelection);
+    let winner = getWinner(userSelection, computerSelection);
 };
 
 function generateRandomNum(min, max)
@@ -58,3 +61,7 @@ function getComputerSelection()
     };
 };
 
+function getWinner(userSelection, computerSelection)
+{
+    
+};
