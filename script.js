@@ -18,6 +18,11 @@ btnScissors.addEventListener('click', () =>
     playRound('Scissors');
 });
 
+counter.addEventListener('click', () =>
+{
+    roundCounter(1);
+});
+
 function generateRandomNum(min, max)
 {
     //Generates a random number between 1 and 3
