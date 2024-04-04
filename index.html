@@ -13,38 +13,45 @@
         <div class="title">Rock Paper Scissor</div>
 
         <div class="game-container">
-
             <div class="header">
                 <div class="round-counter">Round: 0</div>
             </div>
 
             <div class="main">
-
                 <div class="output-container">
                     <div class="output-message"></div>
                     <div class="winner-message"></div>
                 </div>
 
                 <div class="input-container">
-                    <button class="image-btn btn-rock">
-                        <img src="./images/hand-fist.png" alt="Hand clenched into rock fist">
-                    </button>
 
-                    <button class="image-btn btn-paper">
-                        <img src="./images/hand-paper.png" alt="Hand laid flat like paper">
-                    </button>
+                    <div class="rock-container">
+                        <button class="image-btn btn-rock">
+                            <img src="./images/hand-fist.png" alt="Hand clenched into rock fist">
+                        </button>
+                        <div class="rock-description">Rock</div>
+                    </div>
 
-                    <button class="image-btn btn-scissors">
-                        <img src="./images/hand-scissors.png" alt="hand clenched into fist with pointer and middle finger stretched out to look like scissors">
-                    </button>
+                    <div class="paper-container">
+                        <button class="image-btn btn-paper">
+                            <img src="./images/hand-paper.png" alt="Hand laid flat like paper">
+                        </button>
+                        <div class="paper-description">Paper</div>
+                    </div>      
+
+                    <div class="scissors-container">
+                        <button class="image-btn btn-scissors">
+                            <img src="./images/hand-scissors.png" alt="hand clenched into fist with pointer and middle finger stretched out to look like scissors">
+                        </button>
+                        <div class="scissors-description">Scissors</div>
+                    </div> 
+
                 </div>
-
             </div>
 
             <div class="footer">
                 <button class="btn-reset">Reset Game</button>
             </div>
-
         </div>
 
     </body>
