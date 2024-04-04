@@ -1,7 +1,7 @@
 const btnRock = document.querySelector('.btn-rock');
 const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
-var btnCounter = document.querySelectorAll('.image-btn');
+var buttons = document.getElementsByClassName('.image-btn');
 
 const outputContainer = document.querySelector('.output-message');
 const winnerContainer = document.querySelector('.winner-message');
@@ -25,33 +25,34 @@ btnScissors.addEventListener('click', () =>
     playRound('Scissors');
 });
 
-
 function playRound(userSelection)
 { 
     let computerSelection = getComputerSelection();
     
     if(computerSelection === userSelection)
     {
+        roundCounter += 1;
         outputContainer.textContent = userSelection + " equals " + computerSelection + "!";
         winnerContainer.textContent = "It's a draw!";
     }
     else if((computerSelection==='Paper' && userSelection==='Rock') || (computerSelection==='Scissors' && userSelection==='Paper') || (computerSelection==='Rock' && userSelection==='Scissors'))
     {
         computerPoints += 1;
+        roundCounter += 1;
         outputContainer.textContent = computerSelection + " beats " + userSelection + "!";
         winnerContainer.textContent = "Computer wins!";
     } 
     else if((computerSelection==='Rock' && userSelection==='Paper') || (computerSelection==='Paper' && userSelection==='Scissors') || (computerSelection==='Scissors' && userSelection==='Rock'))
     {
         userPoints += 1;
+        roundCounter += 1;
         outputContainer.textContent = userSelection + " beats " + computerSelection + "!";
         winnerContainer.textContent = "User wins!";
     };
-            
-       
 
-    console.log(userPoints);
-    console.log(computerPoints);
+    updateRound(roundCounter);
+
+    
 
 };
 
@@ -81,4 +82,11 @@ function getComputerSelection()
             return "Scissors";
             break;
     };
+};
+
+function updateRound(roundCounter)
+{
+    var roundDisplay = document.querySelector('.round-counter');
+
+    roundDisplay.textContent = "Round: " + roundCounter;
 };
