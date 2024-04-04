@@ -42,3 +42,27 @@ body
     padding: 10px;
     font-size: 16px;
 }
+
+.output-message
+{
+    height: 28px;
+    width: 240px;
+    background-color: #8f8d8d;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #121212;
+    padding: 5px;
+    margin: 10px;
+}
+
+.winner-message
+{
+    height: 28px;
+    width: 200px;
+    background-color: #8f8d8d;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #121212;
+    padding: 5px;
+    margin: 10px;
+}
