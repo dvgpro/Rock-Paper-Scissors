@@ -117,3 +117,11 @@ body
     width: 110px;
     font-weight: bold;
 }
+
+.points-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95px;
+}
