@@ -1,7 +1,6 @@
 const btnRock = document.querySelector('.btn-rock');
 const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
-const buttons = document.querySelectorAll('.image-btn');
 
 const outputContainer = document.querySelector('.output-message');
 const winnerContainer = document.querySelector('.winner-message');
