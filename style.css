@@ -125,3 +125,15 @@ body
     align-items: center;
     height: 95px;
 }
+
+.user-point-container, .computer-point-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    height: 75px;
+    width: 150px;
+    margin: 10px;
+}
