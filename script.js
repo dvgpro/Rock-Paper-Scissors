@@ -5,6 +5,9 @@ const btnScissors = document.querySelector('.btn-scissors');
 const outputContainer = document.querySelector('.output-message');
 const winnerContainer = document.querySelector('.winner-message');
 
+const userPointsDisplay = document.querySelector('.user-points-counter');
+const compPointsDisplay = document.querySelector('.comp-points-counter');
+
 const refreshPage = document.querySelector('.btn-reset');
 
 let userPoints = 0;
