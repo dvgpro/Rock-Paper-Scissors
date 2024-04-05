@@ -55,6 +55,7 @@ function playRound(userSelection)
     };
 
     updateRound(roundCounter);
+    updatePoints(userPoints, computerPoints);
 
     if (roundCounter === 5)
     {
@@ -117,4 +118,10 @@ function gameOver(userPoints, computerPoints)
     }else if(userPoints===computerPoints){
         winnerContainer.textContent = "It's a Draw!";
     };
+};
+
+function  updatePoints(userPoints, computerPoints)
+{
+    userPointsDisplay.textContent = userPoints;
+    compPointsDisplay.textContent = computerPoints
 };
