@@ -1,7 +1,7 @@
 const btnRock = document.querySelector('.btn-rock');
 const btnPaper = document.querySelector('.btn-paper');
 const btnScissors = document.querySelector('.btn-scissors');
-var buttons = document.getElementsByClassName('.image-btn');
+const buttons = document.querySelectorAll('.image-btn');
 
 const outputContainer = document.querySelector('.output-message');
 const winnerContainer = document.querySelector('.winner-message');
@@ -54,6 +54,10 @@ function playRound(userSelection)
 
     updateRound(roundCounter);
 
+    if (roundCounter === 5)
+    {
+        gameOver(userPoints, computerPoints);
+    };
 
 };
 
@@ -96,3 +100,21 @@ refreshPage.addEventListener('click', () =>
 {
     location.reload();
 });
+
+function gameOver(userPoints, computerPoints)
+{
+    btnRock.disabled = true;
+    btnPaper.disabled = true;
+    btnScissors.disabled = true;
+
+    outputContainer.textContent = "Game Over!"
+
+    if (userPoints > computerPoints){
+        winnerContainer.textContent = "User Win!";
+    }else if(userPoints < computerPoints){
+        winnerContainer.textContent = "Computer Wins!";
+    }else if(userPoints===computerPoints){
+        winnerContainer.textContent = "It's a Draw!";
+    };
+
+};
