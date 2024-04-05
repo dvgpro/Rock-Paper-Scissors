@@ -91,7 +91,6 @@ function getComputerSelection()
 function updateRound(roundCounter)
 {
     var roundDisplay = document.querySelector('.round-counter');
-
     roundDisplay.textContent = "Round: " + roundCounter;
 };
 
@@ -115,5 +114,4 @@ function gameOver(userPoints, computerPoints)
     }else if(userPoints===computerPoints){
         winnerContainer.textContent = "It's a Draw!";
     };
-
 };
